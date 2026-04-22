@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SimpleFish {
     private String name;
-    private List<String> HealthNotes = new ArrayList<>();
+    private List<String> healthNotes = new ArrayList<>();
 
     public SimpleFish(String name) {
         this.name = name;
