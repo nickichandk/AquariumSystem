@@ -2,7 +2,10 @@ package AquariumSystem.view;
 
 
 import AquariumSystem.controller.AquariumController;
+import AquariumSystem.exception.FeedingException;
+import AquariumSystem.exception.ValidationException;
 import AquariumSystem.interfaces.Fish;
+import AquariumSystem.model.WaterQuality;
 import AquariumSystem.simpleaquarium.SimpleFish;
 
 import javax.swing.*;
@@ -92,7 +95,7 @@ public class SwingUI {
         try {
             controller.feedFish();
             print("Fiskene fodret");
-        } catch (Exception e) {
+        } catch (FeedingException e) {
             showError(e.getMessage());
         }
     }
@@ -119,7 +122,7 @@ public class SwingUI {
                 print("Vand skiftet (" + quality + ")");
             }
 
-        } catch (Exception e) {
+        } catch (ValidationException e) {
             showError(e.getMessage());
         }
     }
@@ -135,7 +138,7 @@ public class SwingUI {
                 controller.registerFishHealth(fish, note);
                 print("Health check på " + fish.getName());
             }
-        } catch (Exception e) {
+        } catch (ValidationException e) {
             showError(e.getMessage());
         }
     }
