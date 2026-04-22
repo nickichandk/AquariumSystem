@@ -1,4 +1,8 @@
 package AquariumSystem.model;
 
-public class WaterQuality {
+public enum WaterQuality {
+    PERFECT,
+    GOOD,
+    OKAY,
+    BAD,
 }

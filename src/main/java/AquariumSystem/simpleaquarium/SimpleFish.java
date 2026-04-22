@@ -1,4 +1,22 @@
 package AquariumSystem.simpleaquarium;
 
-public class SimpleFish {
+import AquariumSystem.interfaces.Fish;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SimpleFish implements Fish {
+    private String name;
+    private List<String> healthNotes = new ArrayList<>();
+
+    public SimpleFish(String name) {
+        this.name = name;
+    }
+    @Override
+    public String getName() {
+        return name;
+    }
+    @Override
+    public void registerHealthCheck(String note) {
+        healthNotes.add(note);
+    }
 }
