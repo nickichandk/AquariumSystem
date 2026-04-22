@@ -1,9 +1,14 @@
 package AquariumSystem.validation;
 
 
-public class WaterChangeValidator {
+import AquariumSystem.exception.ValidationException;
 
-    public static void validate(String note) {
-        NoteValidator.validate(note, 60);
+public class WaterChangeValidator implements NoteValidation {
+
+    public void validate(String note, int number) throws ValidationException {
+        //NoteValidator.validate(note, 60);
+        if (number > 60) {
+            throw new ValidationException("");
+        }
     }
 }
